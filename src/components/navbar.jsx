@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Sidebar from './sidebar';
+
 
 const Navbar = () => {
 
-  let toggle=(e)=>{
-    console.log("button was Clicked");
-    
-  }
+  const [isOpen, setIsOpen] = useState(false)
+
 
   return (
      <div className="h-16 w-full bg-blue-950 rounded flex justify-between items-center p-4 text-white md:justify-start md:gap-5">
@@ -15,9 +15,13 @@ const Navbar = () => {
           <button className="p-2 whitespace-nowrap cursor-pointer hidden md:block hover:opacity-85">Sign up</button>
           <button className="p-2 cursor-pointer hidden md:block text-red-600 hover:opacity-85">Login</button>
 
-        <button className="text-white text-4xl cursor-pointer md:hidden  active:scale-105" onClick={(e)=>{
-            toggle()
-        }}>≡</button>
+         <button
+          className="text-white text-4xl cursor-pointer md:hidden active:scale-105"
+          onClick={() => setIsOpen(true)}
+        >
+          ≡
+        </button>
+           <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
   )
 }
