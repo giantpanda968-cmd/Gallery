@@ -15,7 +15,7 @@ const Navbar = () => {
           <button className="p-2 whitespace-nowrap cursor-pointer hidden md:block hover:opacity-85">Sign up</button>
           <button className="p-2 cursor-pointer hidden md:block text-red-600 hover:opacity-85">Login</button>
 
-        <button className="text-white text-4xl cursor-pointer md:hidden" onClick={(e)=>{
+        <button className="text-white text-4xl cursor-pointer md:hidden  active:scale-105" onClick={(e)=>{
             toggle()
         }}>≡</button>
       </div>
